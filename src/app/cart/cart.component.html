@@ -1,0 +1,26 @@
+<h1>Your Cart</h1>
+
+
+<div *ngIf="itemsToDisplay.length == 0">No games in your cart</div>
+
+ <table *ngIf="itemsToDisplay.length !== 0" style="width: 50%;text-align: center;">
+    <tr>
+        <td style="width: 50%;">Name</td>
+        <td style="width: 20%;">Quantity</td>
+        <td style="width: 30%;">Remove</td>
+      </tr>
+
+      <tr *ngFor="let item of itemsToDisplay;let i = index">
+        <td>{{ item.itemName }}</td>
+        <td>{{ item.quantity }}</td>
+        <td><button
+            class="bg-yellow-400 rounded p-3"
+            (click)="remove(i)"
+          >
+           Remove
+          </button></td>
+      </tr>
+    
+  </table> 
+  
+  

@@ -1,0 +1,20 @@
+<li class="flex border rounded-xl h-60">
+  <img
+    [src]="game.image"
+    [alt]="game.name"
+    width="150"
+    class="m-auto rounded-sm"
+  />
+  <div class="m-auto">
+    <p class="text-lg">{{ game.name | titlecase }}</p>
+    <p class="text-lg">{{ game.price }}</p>
+    <button
+      class="bg-yellow-400 rounded p-3"
+      
+      (click)="addToCart()"
+    >
+      Add to Cart
+    </button>
+    
+  </div>
+</li>
