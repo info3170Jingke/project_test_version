@@ -1,0 +1,22 @@
+<nav class="flex justify-between p-5 bg-red-800 text-white">
+  <div>
+    <a routerLink="/">Games Shop</a>
+  </div>
+  <div>
+   
+    <button  aria-label="Shopping Cart Icon" *ngIf="isAuthenticated()" routerLink="/cart">Shopping Cart
+    <!-- <mat-icon matBadgeOverlap="false" matBadgeSize="large" matBadgePosition="after" matBadge=" {{ ttItemCount$ }}" matBadgeColor="warn"></mat-icon> -->
+    </button>
+    
+    <ng-container *ngIf="!isAuthenticated()">
+      <a class="mx-4" routerLink="/login"> Login</a>
+      <a class="mx-4" routerLink="/register"> Register</a>
+    </ng-container>
+    <ng-container *ngIf="isAuthenticated()">
+      <button (click)="logout()" class="mx-4">Logout</button>
+  </ng-container>
+  </div>
+</nav>
+<div class="container p-6">
+  <router-outlet></router-outlet>
+</div>

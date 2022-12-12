@@ -1,0 +1,8 @@
+<p>Games list:</p>
+
+<ul *ngIf="isShowing" class="flex flex-wrap justify-center">
+  <ng-container *ngFor="let singleGame of _games">
+    <app-game [game]='singleGame' class="w-1/2 p-5 text-center"></app-game>
+  </ng-container>
+  
+</ul>
